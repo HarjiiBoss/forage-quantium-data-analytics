@@ -1,0 +1,19 @@
+# Mac OS system files
+.DS_Store
+
+# Jupyter Notebook checkpoints and autosaves
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments (if you use venv, conda, or poetry)
+.venv/
+venv/
+env/
+.env
+ENV/
+.conda/
