@@ -112,7 +112,8 @@ forage-quantium-data-analytics/
 
 ## Data Source
 
-Transaction and customer data sourced from the **Quantium Data Analytics Virtual Experience Program** on [Forage](https://www.theforage.com). Raw data files are excluded from this repository per Forage's terms; the cleaned output (`QVI_data_clean.csv`) is included.
+Transaction and customer data sourced from the **Quantium Data Analytics Virtual Experience Program** on [Forage](https://www.theforage.com). 
+Raw data files are excluded from this repository per Forage's terms; the cleaned output (`QVI_data_clean.csv`) is included.
 
 ---
 
