@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taofeek Salami — Quantium Chip Category & Trial Store Uplift Analysis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --surface2: #1a1e28;
+      --border: #252a38;
+      --accent: #c8a96e;
+      --accent2: #7eb8c9;
+      --text: #e8e4dc;
+      --muted: #7a7f8e;
+      --green: #6dbf8a;
+      --red: #e07b6a;
+      --purple: #b48ecf;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── HERO ── */
+    header {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 8vw 4rem;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(109,191,138,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    h1 .accent { color: var(--accent); }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .meta-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .meta-value {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .hero-bio {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s 0.35s ease both;
+    }
+
+    .badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+      border: 1px solid;
+    }
+
+    .badge-python  { color: var(--accent2); border-color: rgba(126,184,201,0.3); background: rgba(126,184,201,0.07); }
+    .badge-pandas  { color: var(--accent);  border-color: rgba(200,169,110,0.3); background: rgba(200,169,110,0.07); }
+    .badge-stats   { color: var(--purple);  border-color: rgba(180,142,207,0.3); background: rgba(180,142,207,0.07); }
+    .badge-complete{ color: var(--green);   border-color: rgba(109,191,138,0.3); background: rgba(109,191,138,0.07); }
+    .badge-forage  { color: #e8a87c;        border-color: rgba(232,168,124,0.3); background: rgba(232,168,124,0.07); }
+
+    .hero-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .hero-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .hero-link::before { content: '→'; color: var(--accent); }
+    .hero-link:hover { color: var(--accent); }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 8vw;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      animation: fadeUp 0.6s 0.6s ease both;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--muted);
+    }
+
+    /* ── LAYOUT ── */
+    main { position: relative; z-index: 1; }
+    section { padding: 5rem 8vw; border-top: 1px solid var(--border); }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    /* ── KPI SNAPSHOT ── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .kpi-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .kpi-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .kpi-context {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--muted);
+    }
+
+    /* ── FINDINGS ── */
+    .findings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .finding-card {
+      background: var(--surface);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .finding-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--green);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .finding-card:hover { background: var(--surface2); }
+    .finding-card:hover::before { transform: scaleX(1); }
+
+    .finding-category {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .finding-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .finding-body {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .finding-body strong { color: var(--accent); font-weight: 500; }
+
+    .finding-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--border);
+      line-height: 1;
+      margin-top: auto;
+    }
+
+    /* ── UPLIFT TABLE ── */
+    .uplift-table-wrap {
+      border: 1px solid var(--border);
+      overflow-x: auto;
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead tr {
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    thead th {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 1rem 1.5rem;
+      text-align: left;
+    }
+
+    tbody tr {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--surface2); }
+
+    tbody td {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text);
+      padding: 1.2rem 1.5rem;
+    }
+
+    .td-highlight {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .td-store { color: var(--accent); font-weight: 500; }
+    .td-score { color: var(--accent2); }
+    .td-caution { color: var(--red); font-size: 0.7rem; }
+
+    /* ── INSIGHTS ── */
+    .insights-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .insight-item {
+      background: var(--surface);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 2rem;
+      transition: background 0.2s;
+    }
+
+    .insight-item:hover { background: var(--surface2); }
+
+    .insight-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .insight-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .insight-category {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .insight-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .insight-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .insight-text strong { color: var(--accent); font-weight: 500; }
+
+    /* ── PROCESS ── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .process-card {
+      background: var(--surface);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: background 0.2s;
+    }
+
+    .process-card:hover { background: var(--surface2); }
+
+    .process-phase {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .process-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .process-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── DELIVERABLE ── */
+    .deliverable-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      padding: 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      transition: background 0.2s;
+    }
+
+    .deliverable-card:hover { background: var(--surface2); }
+
+    .deliverable-icon {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .deliverable-content { flex: 1; }
+
+    .deliverable-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+
+    .deliverable-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .deliverable-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .deliverable-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s;
+    }
+
+    .deliverable-link:hover { gap: 0.8rem; }
+
+    /* ── DATA NOTE ── */
+    .data-note {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 2rem;
+      margin-top: 2rem;
+    }
+
+    .data-note-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .data-note p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-name { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--accent); }
+    .footer-links { display: flex; gap: 1.5rem; }
+
+    .footer-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 640px) {
+      .insight-item { grid-template-columns: 1fr; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<header>
+  <div class="hero-tag">Python · Pandas · Statistical Matching · Forage Job Simulation</div>
+  <h1>Quantium<br/><span class="accent">Chip Category</span><br/>&amp; Trial Store Uplift</h1>
+
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">Client</span>
+      <span class="meta-value">Quantium / Forage</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Dataset</span>
+      <span class="meta-value">264,836 Transactions</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Period</span>
+      <span class="meta-value">Jul 2018 — Jun 2019</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Completed</span>
+      <span class="meta-value">Jun 2026</span>
+    </div>
+  </div>
+
+  <p class="hero-bio">A three-task analytics engagement as part of Quantium's retail analytics team — analysing chip category purchasing behaviour across 264 stores, selecting statistically matched control stores, and testing trial layout uplift for a Category Manager's half-year strategic plan.</p>
+
+  <div class="badge-row">
+    <span class="badge badge-python">Python</span>
+    <span class="badge badge-pandas">Pandas</span>
+    <span class="badge badge-stats">Statistical Matching</span>
+    <span class="badge badge-forage">Forage Simulation</span>
+    <span class="badge badge-complete">Complete</span>
+  </div>
+
+  <div class="hero-links">
+    <a class="hero-link" href="https://github.com/HarjiiBoss/forage-quantium-data-analytics" target="_blank">GitHub Repo</a>
+    <a class="hero-link" href="./Quantium_Category_Strategy_Report.pdf" target="_blank">Category Strategy Report</a>
+    <a class="hero-link" href="https://harjiiboss.github.io" target="_blank">Portfolio</a>
+  </div>
+
+  <div class="scroll-hint">Scroll to explore</div>
+</header>
+
+<main>
+
+  <!-- ═══ PERFORMANCE SNAPSHOT ═══ -->
+  <section>
+    <div class="section-label reveal">Performance Snapshot</div>
+    <h2 class="reveal">Key Metrics at a Glance</h2>
+
+    <div class="kpi-grid reveal">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Chip Sales</div>
+        <div class="kpi-value">$1.80M</div>
+        <div class="kpi-context">Jul 2018 — Jun 2019</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Unique Customers</div>
+        <div class="kpi-value">71,185</div>
+        <div class="kpi-context">loyalty card holders</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Raw Transactions</div>
+        <div class="kpi-value">264,836</div>
+        <div class="kpi-context">after cleaning: 245,302</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Best Trial Uplift</div>
+        <div class="kpi-value">+33.5%</div>
+        <div class="kpi-context">Store 77 — sales uplift</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Stores Analysed</div>
+        <div class="kpi-value">264</div>
+        <div class="kpi-context">across trial & control</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Top Segment Sales</div>
+        <div class="kpi-value">$147K</div>
+        <div class="kpi-context">Mainstream Young Singles</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KEY FINDINGS ═══ -->
+  <section>
+    <div class="section-label reveal">Analysis</div>
+    <h2 class="reveal">What the Data Reveals</h2>
+
+    <div class="findings-grid reveal">
+
+      <div class="finding-card">
+        <div class="finding-category">Customer Segments</div>
+        <div class="finding-title">Mainstream Young Singles Drive Volume — Families Drive Value</div>
+        <div class="finding-body">Mainstream Young Singles/Couples generated <strong>$147K in total sales</strong> through volume — 7,908 customers spending just <strong>$18.62 on average</strong>. Older and Young Families spend <strong>$32–$35 per head</strong> with 4.4–4.7 transactions each — the highest value per customer.</div>
+        <div class="finding-number">01</div>
+      </div>
+
+      <div class="finding-card">
+        <div class="finding-category">Brand & Pack Preference</div>
+        <div class="finding-title">Kettle Dominates — 175g is the Universal Pack Size</div>
+        <div class="finding-body">Kettle is the <strong>dominant brand across all major customer segments</strong>. The 175g pack size is the most purchased across the category, representing the strongest repeat purchase signal for planogram optimisation.</div>
+        <div class="finding-number">02</div>
+      </div>
+
+      <div class="finding-card">
+        <div class="finding-category">Trial Store 77</div>
+        <div class="finding-title">Store 77 — Strongest and Most Reliable Uplift Signal</div>
+        <div class="finding-body">Store 77 (matched to control Store 233, similarity score <strong>0.97</strong>) delivered <strong>+33.5% sales uplift</strong> and <strong>+29.1% customer uplift</strong>, with 2 of 3 trial months exceeding the 95th percentile confidence band — the most statistically robust result across all three trials.</div>
+        <div class="finding-number">03</div>
+      </div>
+
+      <div class="finding-card">
+        <div class="finding-category">Trial Store 86</div>
+        <div class="finding-title">Store 86 — Moderate Uplift, Stronger Customer Response</div>
+        <div class="finding-body">Store 86 (matched to control Store 155, score <strong>0.91</strong>) showed <strong>+8.5% sales uplift</strong> and <strong>+12.7% customer uplift</strong>. Customer growth outpaced revenue growth, suggesting the trial attracted more buyers but at lower average spend.</div>
+        <div class="finding-number">04</div>
+      </div>
+
+      <div class="finding-card">
+        <div class="finding-category">Trial Store 88</div>
+        <div class="finding-title">Store 88 — Positive Uplift but Weaker Control Match</div>
+        <div class="finding-body">Store 88 (matched to control Store 237, score <strong>0.77</strong>) delivered <strong>+13.2% sales uplift</strong> and <strong>+6.6% customer uplift</strong>. Results should be interpreted with caution — the weaker pre-trial match reduces confidence in the uplift attribution.</div>
+        <div class="finding-number">05</div>
+      </div>
+
+      <div class="finding-card">
+        <div class="finding-category">Data Engineering</div>
+        <div class="finding-title">19,534 Non-Chip Rows Removed — 20 Brands Standardised</div>
+        <div class="finding-body">Removed 19,532 salsa dip rows and 1 bulk-buyer outlier (200-unit purchases). Standardised <strong>20 brand name variants</strong> (e.g. RRD → Red Rock Deli) and engineered <strong>PACK_SIZE</strong> and <strong>BRAND</strong> features from product names using regex.</div>
+        <div class="finding-number">06</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ TRIAL RESULTS TABLE ═══ -->
+  <section>
+    <div class="section-label reveal">Trial Store Results</div>
+    <h2 class="reveal">Control Store Matching & Uplift Summary</h2>
+
+    <div class="uplift-table-wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <th>Trial Store</th>
+            <th>Control Store</th>
+            <th>Similarity Score</th>
+            <th>Sales Uplift</th>
+            <th>Customer Uplift</th>
+            <th>Significant Months</th>
+            <th>Confidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-store">Store 77</td>
+            <td>Store 233</td>
+            <td class="td-score">0.97</td>
+            <td class="td-highlight">+33.5%</td>
+            <td class="td-highlight">+29.1%</td>
+            <td>2 / 3 (sales &amp; customers)</td>
+            <td style="color: var(--green); font-family: 'DM Mono', monospace; font-size: 0.75rem;">High</td>
+          </tr>
+          <tr>
+            <td class="td-store">Store 86</td>
+            <td>Store 155</td>
+            <td class="td-score">0.91</td>
+            <td style="color: var(--accent); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;">+8.5%</td>
+            <td style="color: var(--accent); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;">+12.7%</td>
+            <td>1 / 3 sales · 2 / 3 customers</td>
+            <td style="color: var(--accent); font-family: 'DM Mono', monospace; font-size: 0.75rem;">Moderate</td>
+          </tr>
+          <tr>
+            <td class="td-store">Store 88</td>
+            <td>Store 237</td>
+            <td class="td-score">0.77</td>
+            <td style="color: var(--accent2); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;">+13.2%</td>
+            <td style="color: var(--accent2); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;">+6.6%</td>
+            <td>1 / 3 (sales &amp; customers)</td>
+            <td class="td-caution">Lower — weaker match</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="data-note reveal">
+      <div class="data-note-label">Methodology Note</div>
+      <p>Control store selection used a composite similarity scoring function combining Pearson correlation and normalised magnitude distance across total monthly sales and customer counts during the pre-trial period. Confidence bands were derived from pre-trial standard deviation (5th–95th percentile). Trial months breaching the upper band are classified as statistically significant uplift.</p>
+    </div>
+  </section>
+
+  <!-- ═══ INSIGHTS ═══ -->
+  <section>
+    <div class="section-label reveal">Business Insights</div>
+    <h2 class="reveal">Structured Analytical Insights</h2>
+
+    <div class="insights-list reveal">
+
+      <div class="insight-item">
+        <div class="insight-left">
+          <div class="insight-number">01</div>
+          <div class="insight-category">Segment Strategy</div>
+        </div>
+        <div class="insight-right">
+          <div class="insight-title">Volume vs Value — Two Distinct Segment Plays</div>
+          <div class="insight-text">The chip category is driven by two structurally different customer groups. Mainstream Young Singles/Couples generate <strong>$147K in total sales</strong> through sheer volume — nearly 8,000 customers making frequent, low-spend purchases. In contrast, Older and Young Families deliver the highest spend per customer at <strong>$32–$35</strong> with 4.4–4.7 transactions each. Category strategy should address both groups differently: volume promotions and impulse placements for Young Singles, multi-pack and value-bundle positioning for Families.</div>
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-left">
+          <div class="insight-number">02</div>
+          <div class="insight-category">Trial Recommendation</div>
+        </div>
+        <div class="insight-right">
+          <div class="insight-title">Store 77 Layout Merits Broader Rollout</div>
+          <div class="insight-text">Store 77's trial produced the most statistically reliable result — <strong>+33.5% sales uplift</strong> and <strong>+29.1% customer uplift</strong> against a control match scored at 0.97. Two of three trial months exceeded the 95th percentile confidence band for both metrics, confirming the uplift is not attributable to normal baseline variance. This provides sufficient evidence to recommend the Store 77 layout for broader rollout, subject to cost validation and store format compatibility assessment.</div>
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-left">
+          <div class="insight-number">03</div>
+          <div class="insight-category">Planogram</div>
+        </div>
+        <div class="insight-right">
+          <div class="insight-title">Kettle and 175g Should Anchor Category Facings</div>
+          <div class="insight-text">Kettle's dominance across all major customer segments — paired with 175g as the most purchased pack size — indicates these should receive primary shelf placement and maximum facings in planogram design. Secondary brands and pack sizes can fill adjacency slots without displacing the core repeat-purchase drivers. Removing or de-prioritising Kettle would likely create measurable sales leakage.</div>
+        </div>
+      </div>
+
+      <div class="insight-item">
+        <div class="insight-left">
+          <div class="insight-number">04</div>
+          <div class="insight-category">Data Quality</div>
+        </div>
+        <div class="insight-right">
+          <div class="insight-title">Bulk-Buyer Outlier Removed to Protect Segment Accuracy</div>
+          <div class="insight-text">A single customer account purchasing in 200-unit increments was identified and excluded from the analysis. Retaining this record would have materially distorted average spend and transaction frequency metrics across affected segments, producing misleading category benchmarks. This exclusion was validated against segment-level transaction distributions before finalising the cleaned dataset of <strong>245,302 rows</strong>.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ PROCESS ═══ -->
+  <section>
+    <div class="section-label reveal">Methodology</div>
+    <h2 class="reveal">3-Task Analytical Workflow</h2>
+
+    <div class="process-grid reveal">
+      <div class="process-card">
+        <div class="process-phase">Task 1 — Phase 1</div>
+        <div class="process-title">Data Loading & Type Fixing</div>
+        <div class="process-desc">Loaded transaction data (264,836 rows) and customer behaviour data (72,637 rows). Fixed Excel serial date format, set correct column types, validated row counts.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-phase">Task 1 — Phase 2</div>
+        <div class="process-title">Data Cleaning</div>
+        <div class="process-desc">Removed 19,532 non-chip rows (salsa dips), excluded 1 bulk-buyer outlier (200-unit purchases), cleaned product name spacing inconsistencies.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-phase">Task 1 — Phase 3</div>
+        <div class="process-title">Feature Engineering</div>
+        <div class="process-desc">Extracted PACK_SIZE and BRAND from product names using regex. Standardised 20 brand name variants (e.g. RRD → Red Rock Deli, GrnWves → Grain Waves).</div>
+      </div>
+      <div class="process-card">
+        <div class="process-phase">Task 1 — Phase 4</div>
+        <div class="process-title">Dataset Merge</div>
+        <div class="process-desc">Merged transaction and customer data on loyalty card number. Zero data loss confirmed — final merged dataset: 245,302 rows, 12 columns.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-phase">Task 1 — Phase 5</div>
+        <div class="process-title">Segment Analysis</div>
+        <div class="process-desc">Defined a 10-KPI framework. Analysed total sales, customer counts, avg spend, and transaction frequency by lifestage and premium spending tier.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-phase">Task 2 — Phase 1</div>
+        <div class="process-title">Store-Month Aggregation</div>
+        <div class="process-desc">Aggregated transaction data to store-month level — 3,165 records across 264 stores. Separated pre-trial and trial period data for all three trial stores.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-phase">Task 2 — Phase 2</div>
+        <div class="process-title">Control Store Selection</div>
+        <div class="process-desc">Built composite similarity scoring using Pearson correlation + normalised magnitude distance across total sales and customer counts. Selected controls: 233, 155, 237.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-phase">Task 2 — Phase 3</div>
+        <div class="process-title">Uplift Testing</div>
+        <div class="process-desc">Applied pre-trial scaling factors to control store data. Plotted 5th–95th percentile confidence bands from pre-trial standard deviation to assess statistical significance.</div>
+      </div>
+      <div class="process-card">
+        <div class="process-phase">Task 3</div>
+        <div class="process-title">Client Presentation</div>
+        <div class="process-desc">Prepared a 13-slide PowerPoint for Julia (Category Manager) using the Pyramid Principles framework — covering segment findings, trial results, and strategic recommendations.</div>
+      </div>
+    </div>
+
+    <!-- Deliverable card -->
+    <div class="deliverable-card reveal">
+      <div class="deliverable-icon">↗</div>
+      <div class="deliverable-content">
+        <div class="deliverable-label">Task 3 Deliverable</div>
+        <div class="deliverable-title">Quantium Category Strategy Report</div>
+        <div class="deliverable-desc">13-slide client-facing presentation submitted to Quantium's Category Manager (Julia), structured using the Pyramid Principles framework. Covers chip segment analysis, control store methodology, trial store uplift results, and strategic recommendations for the upcoming half-year plan.</div>
+        <a class="deliverable-link" href="./Quantium_Category_Strategy_Report.pdf" target="_blank">View Presentation →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <span class="footer-name">Taofeek Salami</span>
+  <div class="footer-links">
+    <a class="footer-link" href="https://linkedin.com/in/taofeek-salami-460a93245" target="_blank">LinkedIn</a>
+    <a class="footer-link" href="https://github.com/HarjiiBoss" target="_blank">GitHub</a>
+    <a class="footer-link" href="mailto:salamitaofeek92@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
