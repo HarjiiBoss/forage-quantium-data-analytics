@@ -66,7 +66,12 @@ As part of Quantium's retail analytics team, I was tasked with analysing chip pu
 ---
 
 ### Task 3 — Analytics & Commercial Application
-Prepared a client-facing PowerPoint presentation for Julia (Category Manager) structured using the Pyramid Principles framework, incorporating data visualisations, key callouts, insights, and strategic recommendations across 13 slides.
+Prepared a client-facing PowerPoint presentation for Julia (Category Manager) 
+structured using the Pyramid Principles framework, incorporating data 
+visualisations, key callouts, insights, and strategic recommendations across 
+13 slides.
+
+**Deliverable:** [`Quantium_Category_Strategy_Report.pdf`](./Quantium_Category_Strategy_Report.pdf) — client-facing presentation submitted to Quantium's Category Manager.
 
 ---
 
@@ -92,6 +97,7 @@ forage-quantium-data-analytics/
 │   ├── store88_sales_confidence.png
 │   └── store88_customers_confidence.png
 ├── Forage_Certificate.png
+├── Quantium_Category_Strategy_Report.pdf
 ├── .gitignore
 └── README.md
 ```
