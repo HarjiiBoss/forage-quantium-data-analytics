@@ -3,6 +3,8 @@
 
 This repository contains my completed work for the **Quantium Data Analytics Job Simulation** on Forage — a practical, real-world analytics engagement centred on chip category purchasing behaviour and retail trial store performance.
 
+![Dashboard](data/trial_score.png)
+
 ---
 
 ## Certificate of Completion
