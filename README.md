@@ -21,7 +21,7 @@ This repository contains my completed work for the **Quantium Data Analytics Job
 
 As part of Quantium's retail analytics team, I was tasked with analysing chip purchasing behaviour and evaluating trial store performance to provide strategic recommendations to a Category Manager (Julia) for the upcoming half-year strategic plan.
 
-**Data scope:** 264,836 raw transactions across 264 stores, July 2018 – June 2019, covering 72,637 loyalty customers.
+**Data scope:** 264,836 raw transactions across 271 stores, July 2018 – June 2019, covering 72,637 loyalty customers.
 
 ---
 
@@ -40,15 +40,15 @@ As part of Quantium's retail analytics team, I was tasked with analysing chip pu
 **Key findings:**
 - Total chip sales: $1.80M across 71,185 unique customers
 - Families (Older and Young) are the highest-value customers per head, spending $32–$35 on average with 4.4–4.7 transactions per customer
-- Young Singles/Couples Mainstream drive the highest total sales ($147K) through volume alone — 7,908 customers spending just $18.62 each on average
-- Kettle is the dominant brand across all major segments; 175g is the most purchased pack size
+- Young Singles/Couples Mainstream generate the second-highest total sales ($147K, after Budget Older Families at $156K) through volume — 7,908 customers spending just $18.62 each on average
+- Kettle is the top brand by sales, and 175g the top pack size, in each segment examined (Older Families, Young Families, Mainstream Young Singles/Couples)
 
 ---
 
 ### Task 2 — Experimentation & Uplift Testing
 **Notebook:** `notebooks/task2_trial_vs_control.ipynb`
 
-- Aggregated transaction data to store-month level (3,165 records across 264 stores)
+- Aggregated transaction data to store-month level (3,165 records across 271 stores)
 - Built a composite similarity scoring function using Pearson correlation and normalised magnitude distance across two metrics (total sales and number of customers) to identify control stores for trial stores 77, 86, and 88
 - Selected control stores: 233 (score: 0.97), 155 (score: 0.91), and 237 (score: 0.77)
 - Visualised pre-trial trends for all three pairs to validate matches
