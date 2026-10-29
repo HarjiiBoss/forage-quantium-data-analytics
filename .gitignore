@@ -17,3 +17,6 @@ env/
 .env
 ENV/
 .conda/
+# Raw Forage data: not redistributed (download from the Forage programme into data/)
+data/QVI_transaction_data.xlsx
+data/QVI_purchase_behaviour.csv
