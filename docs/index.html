@@ -635,7 +635,7 @@
     </div>
   </div>
 
-  <p class="hero-bio">A three-task analytics engagement as part of Quantium's retail analytics team — analysing chip category purchasing behaviour across 271 stores, selecting statistically matched control stores, and testing trial layout uplift for a Category Manager's half-year strategic plan.</p>
+  <p class="hero-bio">A three-task analytics engagement as part of Quantium's retail analytics team — analysing chip category purchasing behaviour across 272 stores (271 after cleaning), selecting statistically matched control stores, and testing trial layout uplift for a Category Manager's half-year strategic plan.</p>
 
   <div class="badge-row">
     <span class="badge badge-python">Python</span>
@@ -664,22 +664,22 @@
     <div class="kpi-grid reveal">
       <div class="kpi-card">
         <div class="kpi-label">Total Chip Sales</div>
-        <div class="kpi-value">$1.80M</div>
+        <div class="kpi-value">$1.81M</div>
         <div class="kpi-context">Jul 2018 — Jun 2019</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Unique Customers</div>
-        <div class="kpi-value">71,185</div>
+        <div class="kpi-value">71,287</div>
         <div class="kpi-context">loyalty card holders</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Raw Transactions</div>
         <div class="kpi-value">264,836</div>
-        <div class="kpi-context">after cleaning: 245,302</div>
+        <div class="kpi-context">after cleaning: 246,740</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Best Trial Uplift</div>
-        <div class="kpi-value">+33.5%</div>
+        <div class="kpi-value">+32.9%</div>
         <div class="kpi-context">Store 77 — sales uplift</div>
       </div>
       <div class="kpi-card">
@@ -689,7 +689,7 @@
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Top Segment Sales</div>
-        <div class="kpi-value">$156K</div>
+        <div class="kpi-value">$157K</div>
         <div class="kpi-context">Budget Older Families</div>
       </div>
     </div>
@@ -705,7 +705,7 @@
       <div class="finding-card">
         <div class="finding-category">Customer Segments</div>
         <div class="finding-title">Mainstream Young Singles Drive Volume — Families Drive Value</div>
-        <div class="finding-body">Mainstream Young Singles/Couples generated <strong>$147K in total sales</strong>, second only to Budget Older Families ($156K), through volume — 7,908 customers spending just <strong>$18.62 on average</strong>. Older and Young Families spend <strong>$32–$35 per head</strong> with 4.4–4.7 transactions each — the highest value per customer.</div>
+        <div class="finding-body">Mainstream Young Singles/Couples generated <strong>$148K in total sales</strong>, second only to Budget Older Families ($157K), through volume — 7,917 customers spending just <strong>$18.64 on average</strong>. Older and Young Families spend <strong>$32–$35 per head</strong> with 4.4–4.7 transactions each — the highest value per customer.</div>
         <div class="finding-number">01</div>
       </div>
 
@@ -718,15 +718,15 @@
 
       <div class="finding-card">
         <div class="finding-category">Trial Store 77</div>
-        <div class="finding-title">Store 77 — Strongest and Most Reliable Uplift Signal</div>
-        <div class="finding-body">Store 77 (matched to control Store 233, similarity score <strong>0.97</strong>) delivered <strong>+33.5% sales uplift</strong> and <strong>+29.1% customer uplift</strong>, with 2 of 3 trial months exceeding the 95th percentile confidence band — the most statistically robust result across all three trials.</div>
+        <div class="finding-title">Store 77 — Largest Uplift, Closest Control Match</div>
+        <div class="finding-body">Store 77 (matched to control Store 233, similarity score <strong>0.98</strong>) delivered <strong>+32.9% sales uplift</strong> and <strong>+27.9% customer uplift</strong>, with 2 of 3 trial months above the 95th percentile band for both sales and customers — the largest uplift of the three trials.</div>
         <div class="finding-number">03</div>
       </div>
 
       <div class="finding-card">
         <div class="finding-category">Trial Store 86</div>
         <div class="finding-title">Store 86 — Moderate Uplift, Stronger Customer Response</div>
-        <div class="finding-body">Store 86 (matched to control Store 155, score <strong>0.91</strong>) showed <strong>+8.5% sales uplift</strong> and <strong>+12.7% customer uplift</strong>. Customer growth outpaced revenue growth, suggesting the trial attracted more buyers but at lower average spend.</div>
+        <div class="finding-body">Store 86 (matched to control Store 155, score <strong>0.92</strong>) showed <strong>+8.4% sales uplift</strong> and <strong>+13.0% customer uplift</strong>, with 2 of 3 trial months above the band for sales and all 3 for customers. Customer numbers rose faster than sales, so sales per customer were lower than at the control store.</div>
         <div class="finding-number">04</div>
       </div>
 
@@ -739,8 +739,8 @@
 
       <div class="finding-card">
         <div class="finding-category">Data Engineering</div>
-        <div class="finding-title">19,532 Non-Chip Rows Removed — 20 Brands Standardised</div>
-        <div class="finding-body">Removed 19,532 salsa dip rows and 1 bulk-buyer outlier (200-unit purchases). Standardised <strong>20 brand name variants</strong> (e.g. RRD → Red Rock Deli) and engineered <strong>PACK_SIZE</strong> and <strong>BRAND</strong> features from product names using regex.</div>
+        <div class="finding-title">18,094 Salsa Rows Removed — Names Standardised into 20 Brands</div>
+        <div class="finding-body">Removed 18,094 rows of salsa products and 1 bulk-buyer outlier (200-unit purchases). Standardised <strong>20 brand name variants</strong> (e.g. RRD → Red Rock Deli) and engineered <strong>PACK_SIZE</strong> and <strong>BRAND</strong> features from product names using regex.</div>
         <div class="finding-number">06</div>
       </div>
 
@@ -769,19 +769,19 @@
           <tr>
             <td class="td-store">Store 77</td>
             <td>Store 233</td>
-            <td class="td-score">0.97</td>
-            <td class="td-highlight">+33.5%</td>
-            <td class="td-highlight">+29.1%</td>
-            <td>2 / 3 (sales &amp; customers)</td>
+            <td class="td-score">0.98</td>
+            <td class="td-highlight">+32.9%</td>
+            <td class="td-highlight">+27.9%</td>
+            <td>2 / 3 sales · 2 / 3 customers</td>
             <td style="color: var(--green); font-family: 'DM Mono', monospace; font-size: 0.75rem;">High</td>
           </tr>
           <tr>
             <td class="td-store">Store 86</td>
             <td>Store 155</td>
-            <td class="td-score">0.91</td>
-            <td style="color: var(--accent); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;">+8.5%</td>
-            <td style="color: var(--accent); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;">+12.7%</td>
-            <td>1 / 3 sales · 2 / 3 customers</td>
+            <td class="td-score">0.92</td>
+            <td style="color: var(--accent); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;">+8.4%</td>
+            <td style="color: var(--accent); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;">+13.0%</td>
+            <td>2 / 3 sales · 3 / 3 customers</td>
             <td style="color: var(--accent); font-family: 'DM Mono', monospace; font-size: 0.75rem;">Moderate</td>
           </tr>
           <tr>
@@ -790,7 +790,7 @@
             <td class="td-score">0.77</td>
             <td style="color: var(--accent2); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;">+13.2%</td>
             <td style="color: var(--accent2); font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;">+6.6%</td>
-            <td>1 / 3 (sales &amp; customers)</td>
+            <td>2 / 3 sales · 1 / 3 customers</td>
             <td class="td-caution">Lower — weaker match</td>
           </tr>
         </tbody>
@@ -817,7 +817,7 @@
         </div>
         <div class="insight-right">
           <div class="insight-title">Volume vs Value — Two Distinct Segment Plays</div>
-          <div class="insight-text">The chip category is driven by two structurally different customer groups. Mainstream Young Singles/Couples generate <strong>$147K in total sales</strong> through the size of the segment — 7,908 customers averaging 2.45 transactions and $18.62 each. In contrast, Older and Young Families deliver the highest spend per customer at <strong>$32–$35</strong> with 4.4–4.7 transactions each. Category strategy should address both groups differently: volume promotions and impulse placements for Young Singles, multi-pack and value-bundle positioning for Families.</div>
+          <div class="insight-text">The chip category is driven by two structurally different customer groups. Mainstream Young Singles/Couples generate <strong>$148K in total sales</strong> through the size of the segment — 7,917 customers averaging 2.46 transactions and $18.64 each. In contrast, Older and Young Families deliver the highest spend per customer at <strong>$32–$35</strong> with 4.4–4.7 transactions each. Category strategy should address both groups differently: volume promotions and impulse placements for Young Singles, multi-pack and value-bundle positioning for Families.</div>
         </div>
       </div>
 
@@ -828,7 +828,7 @@
         </div>
         <div class="insight-right">
           <div class="insight-title">Store 77 Layout Merits Broader Rollout</div>
-          <div class="insight-text">Store 77's trial produced the most statistically reliable result — <strong>+33.5% sales uplift</strong> and <strong>+29.1% customer uplift</strong> against a control match scored at 0.97. Two of three trial months exceeded the 95th percentile band for both metrics. With three trial months and a band built from seven pre-trial months, this is the strongest of the three results rather than proof; it supports the Store 77 layout for broader rollout, subject to cost validation and store format compatibility assessment.</div>
+          <div class="insight-text">Store 77's trial produced the largest uplift — <strong>+32.9% sales</strong> and <strong>+27.9% customers</strong> — against the closest control match (0.98). Two of three trial months were above the 95th percentile band for both metrics. With three trial months and a band built from seven pre-trial months, this is the strongest of the three results rather than proof; it supports the Store 77 layout for broader rollout, subject to cost validation and store format compatibility assessment.</div>
         </div>
       </div>
 
@@ -850,7 +850,7 @@
         </div>
         <div class="insight-right">
           <div class="insight-title">Bulk-Buyer Outlier Removed to Protect Segment Accuracy</div>
-          <div class="insight-text">A single customer account purchasing in 200-unit increments was identified and excluded from the analysis. The account's two transactions of 200 units each were far above any other purchase, so they were removed before the segment metrics were calculated, leaving a cleaned dataset of <strong>245,302 rows</strong>.</div>
+          <div class="insight-text">A single customer account purchasing in 200-unit increments was identified and excluded from the analysis. The account's two transactions of 200 units each were far above any other purchase, so they were removed before the segment metrics were calculated, leaving a cleaned dataset of <strong>246,740 rows</strong>.</div>
         </div>
       </div>
 
@@ -871,7 +871,7 @@
       <div class="process-card">
         <div class="process-phase">Task 1 — Phase 2</div>
         <div class="process-title">Data Cleaning</div>
-        <div class="process-desc">Removed 19,532 non-chip rows (salsa dips), excluded 1 bulk-buyer outlier (200-unit purchases), cleaned product name spacing inconsistencies.</div>
+        <div class="process-desc">Removed 18,094 rows of salsa products (nine products), excluded 1 bulk-buyer outlier (200-unit purchases), cleaned product name spacing inconsistencies.</div>
       </div>
       <div class="process-card">
         <div class="process-phase">Task 1 — Phase 3</div>
@@ -881,7 +881,7 @@
       <div class="process-card">
         <div class="process-phase">Task 1 — Phase 4</div>
         <div class="process-title">Dataset Merge</div>
-        <div class="process-desc">Merged transaction and customer data on loyalty card number. Zero data loss confirmed — final merged dataset: 245,302 rows, 12 columns.</div>
+        <div class="process-desc">Merged transaction and customer data on loyalty card number. Zero data loss confirmed — final merged dataset: 246,740 rows, 12 columns.</div>
       </div>
       <div class="process-card">
         <div class="process-phase">Task 1 — Phase 5</div>
